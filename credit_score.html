@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Check Credit Score</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .header {
+            background: #173b7a;
+            color: white;
+            padding: 25px;
+        }
+
+        .container {
+            width: 500px;
+            max-width: 90%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        h1 {
+            text-align: center;
+            color: #173b7a;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            background: #173b7a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f4f7fb;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .score {
+            font-size: 40px;
+            font-weight: bold;
+            color: #173b7a;
+        }
+
+        .message {
+            margin-top: 20px;
+            color: red;
+            text-align: center;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #173b7a;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h2>LoanEase</h2>
+</div>
+
+<div class="container">
+
+    <h1>Check Credit Score</h1>
+
+    <form method="POST">
+
+        <label for="phone">
+            Enter Phone Number
+        </label>
+
+        <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+        >
+
+        <button type="submit">
+            Check Score
+        </button>
+
+    </form>
+
+
+    {% if score is not none %}
+
+    <div class="result">
+
+        <h2>{{ name }}</h2>
+
+        <p>Your Credit Score</p>
+
+        <div class="score">
+            {{ score }}
+        </div>
+
+        <h3>
+            Status: {{ status }}
+        </h3>
+
+    </div>
+
+    {% endif %}
+
+
+    {% if message %}
+
+    <div class="message">
+        {{ message }}
+    </div>
+
+    {% endif %}
+
+
+    <a class="back" href="{{ url_for('dashboard') }}">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>

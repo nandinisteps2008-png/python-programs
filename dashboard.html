@@ -1,0 +1,170 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Credit Scoring</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #173b7a;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav {
+            background-color: #102d60;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container h2 {
+            color: #173b7a;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .container p {
+            font-size: 17px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            width: 260px;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #173b7a;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #173b7a;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #2856a0;
+        }
+
+        footer {
+            background-color: #173b7a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Loan Application Credit Scoring</h1>
+    <p>Smart and Simple Loan Eligibility System</p>
+</header>
+
+<nav>
+    <a href="{{ url_for('dashboard') }}">Home</a>
+    <a href="{{ url_for('apply') }}">Apply Now</a>
+    <a href="{{ url_for('check_score') }}">Check Credit Score</a>
+    <a href="{{ url_for('applications') }}">My Applications</a>
+</nav>
+
+<div class="container">
+
+    <h2>Welcome to Loan Application System</h2>
+
+    <p>
+        Apply for a loan, check your credit score, and view your
+        application details through our simple online system.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Apply for Loan</h3>
+            <p>Fill in your personal and financial details to submit a loan application.</p>
+            <a href="{{ url_for('apply') }}" class="btn">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>Check Credit Score</h3>
+            <p>Check your credit score using your registered phone number.</p>
+            <a href="{{ url_for('check_score') }}" class="btn">Check Score</a>
+        </div>
+
+        <div class="card">
+            <h3>My Applications</h3>
+            <p>View the loan applications submitted through this system.</p>
+            <a href="{{ url_for('applications') }}" class="btn">View Applications</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Loan Application Credit Scoring System</p>
+</footer>
+
+</body>
+</html>
+```

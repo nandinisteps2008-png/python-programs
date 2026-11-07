@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanEase - Home</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #243247;
+        }
+
+        nav {
+            background: #12345a;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #12345a;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #586579;
+        }
+
+        .button {
+            display: inline-block;
+            background: #087f8c;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        .button:hover {
+            background: #066873;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            padding: 30px 20px 60px;
+        }
+
+        .card {
+            background: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 12px #dce3ed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #12345a;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>LoanEase</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Your Journey to a Better Loan Starts Here</h1>
+
+    <p>
+        A simple platform to submit and manage
+        your loan applications.
+    </p>
+
+    <a href="{{ url_for('dashboard') }}" class="button">
+        Get Started
+    </a>
+</section>
+
+<section class="features" id="services">
+
+    <div class="card">
+        <h3>Apply for Loan</h3>
+        <p>Submit your loan application online.</p>
+    </div>
+
+    <div class="card">
+        <h3>Track Applications</h3>
+        <p>View your submitted applications.</p>
+    </div>
+
+    <div class="card">
+        <h3>Credit Score</h3>
+        <p>Explore our credit-score feature.</p>
+    </div>
+
+</section>
+
+<section id="about" style="text-align:center; padding:30px;">
+    <h2>About LoanEase</h2>
+    <p>Manage your loan applications in one place.</p>
+</section>
+
+<footer>
+    <p>LoanEase Loan Application System</p>
+</footer>
+
+</body>
+</html>
+

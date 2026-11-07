@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Applications</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .header {
+            background: #173b7a;
+            color: white;
+            padding: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        h2 {
+            color: #173b7a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 3px 10px #ddd;
+        }
+
+        th {
+            background: #173b7a;
+            color: white;
+            padding: 14px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 20px;
+            background: #173b7a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .empty {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>My Applications</h1>
+</div>
+
+<div class="container">
+
+    <h2>Loan Applications</h2>
+
+    {% if applications %}
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Loan Amount</th>
+            <th>Income</th>
+            <th>Credit History</th>
+            <th>Credit Score</th>
+            <th>Status</th>
+        </tr>
+
+        {% for application in applications %}
+
+        <tr>
+            <td>{{ application[0] }}</td>
+            <td>{{ application[1] }}</td>
+            <td>{{ application[2] }}</td>
+            <td>₹{{ application[3] }}</td>
+            <td>₹{{ application[4] }}</td>
+            <td>{{ application[5] }}</td>
+            <td>{{ application[6] }}</td>
+            <td>{{ application[7] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <div class="empty">
+        <h3>No applications found</h3>
+        <p>You have not submitted any loan applications yet.</p>
+    </div>
+
+    {% endif %}
+
+    <a class="back" href="{{ url_for('dashboard') }}">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>
